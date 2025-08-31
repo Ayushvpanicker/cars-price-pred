@@ -21,7 +21,7 @@ Target: Selling_Price
 
 Quick Start
 1️⃣ Clone repo
-git clone https://github.com/yourusername/car-price-prediction.git
+git clone https://github.com/Ayushvpanicker/cars-price-pred.git
 cd car-price-prediction
 
 2️⃣ Install dependencies
