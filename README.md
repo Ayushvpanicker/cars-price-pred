@@ -1,6 +1,10 @@
-
-
 Car Price Prediction using PyTorch 🚗💰
+
+
+
+
+
+
 
 
 
@@ -9,7 +13,7 @@ Car Price Prediction using PyTorch 🚗💰
 
 Overview
 
-Predict the selling price of used cars using a two-layer neural network built in PyTorch. The model learns non-linear relationships between car features and prices.
+Predict the selling price of used cars using a two-layer neural network built in PyTorch. The model captures non-linear relationships between car features and prices, producing realistic, non-negative predictions.
 
 Dataset
 
@@ -20,21 +24,36 @@ Features: Year, Present_Price, Kms_Driven, Owner, Fuel_Type, Seller_Type, Transm
 Target: Selling_Price
 
 Quick Start
-1️⃣ Clone repo
+1️⃣ Clone the repository
 git clone https://github.com/Ayushvpanicker/cars-price-pred.git
-cd car-price-prediction
+cd cars-price-pred
 
 2️⃣ Install dependencies
 pip install torch pandas scikit-learn matplotlib
 
-3️⃣ Run Jupyter Notebook
+3️⃣ Launch the Jupyter Notebook
 jupyter notebook car_price_prediction.ipynb
 
-Usage Examples
+Project Workflow
++-------------------+       +---------------------+       +---------------------+
+|                   |       |                     |       |                     |
+|   Input Features  | ----> |  Neural Network     | ----> |  Predicted Selling  |
+|                   |       |  (2-Layer ReLU)    |       |  Price (in lakhs)   |
++-------------------+       +---------------------+       +---------------------+
+| Year               |                              
+| Present_Price      |                              
+| Kms_Driven         |                              
+| Owner              |                              
+| Fuel_Type (encoded)|                              
+| Seller_Type (encoded)|                             
+| Transmission (encoded)|                            
++-------------------+                               
+
+Usage
 Train Model
 history = fit(epochs=300, lr=1e-2, model=model, train_loader=train_loader, val_loader=val_loader)
 
-Evaluate Validation Loss
+Evaluate Model
 final_result = evaluate(model, val_loader)
 print("Validation Loss:", final_result['val_loss'])
 
@@ -56,17 +75,19 @@ plt.show()
 
 Features
 
-Properly normalized inputs
+Properly normalized input features
 
-Realistic, non-negative predictions
+Target kept in real units for realistic predictions
 
-Two-layer neural network for non-linear relationships
+Two-layer neural network captures non-linear relationships
 
-Easy-to-run notebook with example predictions
+Output clamped to non-negative values
 
-Results
+Visualize training and validation losses
 
-Example prediction for a car:
+Example Result
+
+Prediction for a sample car:
 
 Predicted Selling Price: 14.18 lakhs
 
